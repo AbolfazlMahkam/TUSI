@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 
 class MainScene extends Phaser.Scene {
   balls!: Phaser.Physics.Arcade.Group;
@@ -137,7 +137,7 @@ class MainScene extends Phaser.Scene {
       pockets,
       this.handlePocketCollision,
       undefined,
-      this
+      this 
     );
 
     // چوب بیلیارد
@@ -227,20 +227,20 @@ class MainScene extends Phaser.Scene {
   }
 
   handlePocketCollision(
-    ball: Phaser.GameObjects.Arc,
-    pocket: Phaser.GameObjects.GameObject
+    ball: any,
+    pocket: any
   ) {
-    if (ball === this.cueBall) {
-      // توپ سفید به موقعیت اولیه برمی‌گردد
-      ball.setPosition(200, 600);
-      (ball.body as Phaser.Physics.Arcade.Body).setVelocity(0, 0);
-      this.scoreText.setText("توپ سفید افتاد! امتیاز: " + this.score);
-    } else {
-      // حذف توپ رنگی و افزایش امتیاز
-      ball.destroy();
-      this.score += 10;
-      this.scoreText.setText("امتیاز: " + this.score);
-    }
+    // if (ball === this.cueBall) {
+    //   // توپ سفید به موقعیت اولیه برمی‌گردد
+    //   ball.setPosition(200, 600);
+    //   (ball.body as Phaser.Physics.Arcade.Body).setVelocity(0, 0);
+    //   this.scoreText.setText("توپ سفید افتاد! امتیاز: " + this.score);
+    // } else {
+    //   // حذف توپ رنگی و افزایش امتیاز
+    //   ball.destroy();
+    //   this.score += 10;
+    //   this.scoreText.setText("امتیاز: " + this.score);
+    // }
   }
 
   update() {
