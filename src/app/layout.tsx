@@ -2,8 +2,8 @@
 import React from "react";
 import { ContextProvider } from "@/context/Context";
 import { Josefin_Sans } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
 import "./globals.css";
 
 const JosefinSans = Josefin_Sans({ subsets: ["latin"] });
